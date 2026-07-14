@@ -137,6 +137,21 @@ function main() {
 
     }
 
+
+    const consoleObserver = new ConsoleObserver();
+    const clockObserver = new ClockObserver();
+
+    gasMask.addObserver(consoleObserver);
+    gasMask.addObserver(clockObserver);
+
+    console.log(`
+    Simulation started
+    `);
+
+    while (gasMask.getRemainingTime() > 0) {
+
+        gasMask.consumeMinute();
+    }
 }
 
 main();

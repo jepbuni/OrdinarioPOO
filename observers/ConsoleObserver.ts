@@ -6,7 +6,7 @@ export class ConsoleObserver implements Observer {
     // Muestra el mensaje recibido
     update(message: string): void {
 
-        console.log(`[SYSTEM] ${message}`);
+        console.log(`\t[SYSTEM] ${message}`);
 
     }
 

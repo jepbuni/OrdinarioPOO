@@ -27,7 +27,7 @@ export class GasMask implements Subject {
         this.filter = filter;
         this.remainingTime = filter.getDuration();
 
-        this.notify(`New filter installed: ${filter.getName()} (${this.remainingTime} minutes)`);
+        this.notifyObserver(`New filter installed: ${filter.getName()} (${this.remainingTime} minutes)`);
 
     }
 
@@ -38,13 +38,13 @@ export class GasMask implements Subject {
 
             this.remainingTime--;
 
-            this.notify(`Remaining time: ${this.remainingTime} minute(s)`);
+            this.notifyObserver(`Remaining time: ${this.remainingTime} minute(s)`);
 
         }
 
         if (this.remainingTime === 0) {
 
-            this.notify("WARNING: Replace your gas filter immediately.");
+            this.notifyObserver("WARNING: Replace your gas filter immediately.");
 
         }
 
