@@ -9,9 +9,9 @@ import { BalancedBuild } from "./builds/BalancedBuild.ts";
 function main() {
 
     console.log(`
-        ==============================
+        ------------------------------
         METRO WEAPON SYSTEM
-        ==============================
+        ------------------------------
         `);
 
     // Pregunta al usuario el tipo de arma

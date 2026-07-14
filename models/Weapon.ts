@@ -18,9 +18,9 @@ export class Weapon {
     displayInfo(): void {
 
         console.log(`
-        ================================
+        ------------------------------
         Weapon Information
-        ================================
+        ------------------------------
 
         Name: ${this.name}
         Category: ${this.category}
@@ -39,7 +39,7 @@ export class Weapon {
         Mobility: ${this.mobility}
         Stealth: ${this.stealth}
 
-        ================================ `);
+        ------------------------------ `);
 
     }
 
