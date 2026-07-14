@@ -4,12 +4,12 @@ import { Observer } from "./Observer.ts";
 export interface Subject {
 
     // Agrega un observador
-    add(observer: Observer): void;
+    addObserver(observer: Observer): void;
 
     // Elimina un observador
-    del(observer: Observer): void;
+    delObserver(observer: Observer): void;
 
     // Notifica a todos los observadores
-    notify(message: string): void;
+    notifyObserver(message: string): void;
 
 }
