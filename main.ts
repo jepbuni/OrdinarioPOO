@@ -6,6 +6,13 @@ import { StealthBuild } from "./builds/StealthBuild.ts";
 import { SniperBuild } from "./builds/SniperBuild.ts";
 import { BalancedBuild } from "./builds/BalancedBuild.ts";
 
+import { GasMask } from "./models/GasMask.ts";
+import { BasicFilter } from "./filters/BasicFilter.ts";
+import { ExtendedFilter } from "./filters/ExtendedFilter.ts";
+import { MilitaryFilter } from "./filters/MilitaryFilter.ts";
+import { ConsoleObserver } from "./observers/ConsoleObserver.ts";
+import { ClockObserver } from "./observers/ClockObserver.ts";
+
 function main() {
 
     console.log(`
@@ -85,6 +92,50 @@ function main() {
 
     // Muestra la información del arma
     finalWeapon.displayInfo();
+
+    console.log(`
+        ------------------------------
+    `);
+
+    console.log(`
+        ------------------------------
+        GAS MASK SYSTEM
+        ------------------------------
+    `);
+
+    const filterChoice = prompt(`
+        Choose a gas filter
+
+        1 One minute filter
+        3 Three minute filter
+        5 Five minute filter
+    `);
+
+    let gasMask: GasMask;
+
+    switch (filterChoice) {
+
+        case "1":
+
+            gasMask = new GasMask(new BasicFilter());
+            break;
+
+        case "3":
+
+            gasMask = new GasMask(new ExtendedFilter());
+            break;
+
+        case "5":
+
+            gasMask = new GasMask(new MilitaryFilter());
+            break;
+
+        default:
+
+            console.log("Invalid filter.");
+            return;
+
+    }
 
 }
 
